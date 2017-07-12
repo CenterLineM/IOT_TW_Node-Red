@@ -1,0 +1,53 @@
+
+
+<html>
+
+<head>
+  <script>
+
+  function calculateBmi() {
+    var weight = document.bmiForm.weight.value
+    var height = document.bmiForm.height.value
+    if( weight > 0 && height > 0) {
+
+      // 處裡立即計算
+      var finalBmi = weight/(height/100*height/100)
+
+      // 顯示BMI值在網頁上
+      document.bmiForm.bmi.value = finalBmi
+
+      // 顯示資訊
+      if(finalBmi < 18.5) {
+        document.bmiForm.meaning.value = "That you are too thin"
+      }
+
+      else if(finalBmi > 18.5 && finalBmi < 25){
+        document.bmiForm.meaning.value = "That you are healthy"
+      }
+      if(finalBmi > 25) {
+        document.bmiForm.meaning.value = "That you have overweight."
+      }
+
+    }
+    else {
+      alert("Please Fill in everything correctly")
+    }
+
+
+  }
+  </script>
+</head>
+
+
+<body>
+  <form name="bmiForm" >
+    your weight(kg) : <input type="text" name="weight" size="10"><br />
+    your height(cm) : <input type="text" name="height" size="10"><br />
+  <input type="button" value="Calculate BMI" onclick="calculateBmi()" ><br />
+  your BMI: <input type="text" name="bmi" size="10"> <br />
+  this Means: <input type="text" name="meaning" size="25"> <br />
+  <input type="reset" value="Reset" />
+ </forme>
+</body>
+
+</html>

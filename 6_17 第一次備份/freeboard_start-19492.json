@@ -1,0 +1,110 @@
+{
+	"version": 1,
+	"allow_edit": true,
+	"plugins": [],
+	"panes": [
+		{
+			"title": "室內感測器資料呈現",
+			"width": 1,
+			"row": {
+				"3": 1,
+				"4": 1
+			},
+			"col": {
+				"3": 2,
+				"4": 3
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "室內溼度顯示",
+						"value": "datasources[\"freeboard1\"][\"濕度\"]",
+						"units": "%",
+						"min_value": 0,
+						"max_value": 100
+					}
+				},
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "室內溫度顯示",
+						"value": "datasources[\"freeboard1\"][\"溫度\"]",
+						"units": "'C",
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		},
+		{
+			"title": "台中天氣顯示",
+			"width": 1,
+			"row": {
+				"3": 5,
+				"4": 1
+			},
+			"col": {
+				"3": 1,
+				"4": 2
+			},
+			"col_width": 1,
+			"widgets": [
+				{
+					"type": "text_widget",
+					"settings": {
+						"title": "台中天氣狀況",
+						"size": "regular",
+						"value": "datasources[\"freeboard\"][\"weather\"]",
+						"sparkline": false,
+						"animate": true,
+						"units": "目前"
+					}
+				},
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "台中攝氏溫度",
+						"value": "datasources[\"freeboard\"][\"tempc\"]",
+						"units": "C",
+						"min_value": 0,
+						"max_value": 100
+					}
+				},
+				{
+					"type": "gauge",
+					"settings": {
+						"title": "台中 即時 濕度",
+						"value": "datasources[\"freeboard\"][\"humidity\"]",
+						"units": "%",
+						"min_value": 0,
+						"max_value": 100
+					}
+				}
+			]
+		}
+	],
+	"datasources": [
+		{
+			"name": "freeboard",
+			"type": "freeboard",
+			"settings": {
+				"name": "freeboard"
+			}
+		},
+		{
+			"name": "freeboard1",
+			"type": "freeboard1",
+			"settings": {
+				"name": "freeboard1"
+			}
+		},
+		{
+			"name": "台北天氣顯示",
+			"type": "freeboard3",
+			"settings": {}
+		}
+	],
+	"columns": 4
+}
